@@ -4,14 +4,14 @@
     <div class="flex">
       <div class="n8 text-left">
         <div class="icon-wrapper">
-          <!-- <img src="images/site-icon.png" class="img-responsive" alt="maxine Blooms" title="Maxine Blooms"> -->
-          <h1>Maxine Blooms</h1>
+          <img src="images/logo.png" class="img-responsive" alt="maxine Blooms" title="Maxine Blooms" width="100%">
+          <!-- <h1>Maxine Blooms</h1> -->
         </div>
       </div>
       <div class="n4 text-right relative">
         <div class="icons-wrapper flex justify-end">
           <div class="links">
-            <a href="#" class="relative">
+            <a href="cart.php" class="relative">
               <i class="fas fa-shopping-cart icon"></i>
               <span class="absolute badge">3</span>
             </a>
@@ -30,9 +30,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
           <div class="card-footer">
 
@@ -96,62 +94,35 @@
 
       </div>
     </div>
+    <?php $categories = ['Fresh flowers', 'preserved flowers', 'personalized gifts', 'decor', 'greens', 'occassions', 'accessories']; ?>
+    <?php $icons = ['flower.png', 'preserved.png', 'gift.png', 'decor.png', 'greens.png', 'occassion.png', 'accessories.png']; ?>
     <div class="flex">
 
       <div class="n8 text-left">
 
-        <ul class="icon-list">
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="images/flower.png" alt="" class="icon">
-              <span>Fresh Flowers</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="images/preserved.png" alt="" class="icon">
-              <span>preserved flowers</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="images/gift.png" alt="" class="icon">
-              <span>personalized gifts</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="images/decor.png" alt="" class="icon">
-              <span>decor</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="images/greens.png" alt="" class="icon">
-              <span>greens</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="images/occasion.png" alt="" class="icon">
-              <span>occassions</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="images/accessory.png" alt="" class="icon">
-              <span>accessories</span>
-            </a>
-          </li>
-
-        </ul>
+        <table class="category-list" id="categories_list">
+          <?php $i=0; foreach( $categories as $cat ): ?>
+          <?php $left = strlen($cat) < 11 ? strlen($cat) + (37 + 0.5) : ( strlen($cat) < 13 ? strlen($cat) + (37 + 1) : strlen($cat) + (39 + 5) ) ; ?>
+          <tr>
+            <td class="category-item" id="cat-main-<?=$i?>" subcatid="<?=$i?>">
+              <div class="link-wrapper relative">
+                <a href="" class="icon-label">
+                  <div class="icon"><img src="images/icons/<?=$icons[$i]?>" alt="" width="32px" height="32px"></div>
+                  <span class="catTitle"><?= $cat ?></span>
+                </a>
+                <ul id="subcats-<?=$i?>" class="subcats absolute <?=$i == 0 ? 'first' : ''?>" style="left: <?=$left?>%">
+                  <li><a href="">Fruit Hamper/basket</a></li>
+                  <li class="text-center"><a href="">hand bouquet</a></li>
+                  <li><a href="">table arrangements</a></li>
+                  <li><a href="">venue decors</a></li>
+                  <span></span>
+                  <div class="close close-subcats"><i class="far fa-times-circle"></i></div>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <?php $i++; endforeach; ?>
+        </table>
 
       </div>
 
