@@ -95,7 +95,7 @@
       </div>
     </div>
     <?php $categories = ['Fresh flowers', 'preserved flowers', 'personalized gifts', 'decor', 'greens', 'occassions', 'accessories']; ?>
-    <?php $icons = ['flower.png', 'preserved.png', 'gift.png', 'decor.png', 'greens.png', 'occassion.png', 'accessories.png']; ?>
+    <?php $icons = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png']; ?>
     <div class="flex">
 
       <div class="n8 text-left">
@@ -107,7 +107,7 @@
             <td class="category-item" id="cat-main-<?=$i?>" subcatid="<?=$i?>">
               <div class="link-wrapper relative">
                 <a href="" class="icon-label">
-                  <div class="icon"><img src="images/icons/<?=$icons[$i]?>" alt="" width="32px" height="32px"></div>
+                  <div class="icon"><img src="images/bannericons/<?=$icons[$i]?>" alt="" width="32px" height="32px"></div>
                   <span class="catTitle"><?= $cat ?></span>
                 </a>
                 <ul id="subcats-<?=$i?>" class="subcats absolute <?=$i == 0 ? 'first' : ''?>" style="left: <?=$left?>%">

@@ -2,6 +2,8 @@
 
 @include('theme.home.top-nav')
 
-@yield('content')
+<main class="{{ isset($template) ? $template : '' }}">
+    @yield('content')
+</main>
 
 @include('theme.partials.footer')

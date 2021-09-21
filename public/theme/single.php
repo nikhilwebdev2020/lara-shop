@@ -24,9 +24,9 @@
         <div class="block flex">
             <a href="" class="tabs button font-dark" data-target="#tab1">Description <i
                     class="fas fa-caret-down"></i></a>
-            <a href="" class="tabs button font-dark" data-target="#tab2">Disclaimer <i
+            <a href="" class="tabs button font-dark active" data-target="#tab2">Disclaimer <i
                     class="fas fa-caret-down"></i></a>
-            <a href="" class="tabs button font-dark active" data-target="#tab3">Reviews <i class="fas fa-caret-down"></i></a>
+            <a href="" class="tabs button font-dark" data-target="#tab3">Reviews <i class="fas fa-caret-down"></i></a>
         </div>
         <div class="block">
             <div class="tab" id="tab1">
@@ -34,70 +34,16 @@
                 accusamus officia dignissimos explicabo molestias labore. Nulla, voluptatum. Nihil tempora suscipit
                 minus dolore, accusantium quos molestias quibusdam.
             </div>
-            <div class="tab" id="tab2">
+            <div class="tab active" id="tab2">
                 <?php include('sections/product/disclaimer.php') ?>
             </div>
-            <div class="tab active review-tab" id="tab3">
+            <div class="tab review-tab" id="tab3">
                 <?php include('sections/product/reviews.php') ?>
             </div>
         </div>
     </section>
 
-    <section class="related-products">
-        <h1 class="section-title">
-            <span class="before"></span>
-            Trending Products
-            <span class="after"></span>
-        </h1>
-
-        <section class="products-section">
-
-            <div class="products-carousel flex">
-
-                <?php for ($i=8; $i < 12; $i++) { ?>
-                <div class="single-product">
-                    <a href="/single.php?id=<?=$i+5?>">
-                        <img src="https://picsum.photos/id/<?=$i+5?>/220/220" alt="">
-                    </a>
-
-                    <div class="bottom">
-                        <div class="flex">
-                            <div class="n6">
-                                <div class="text-grp rprice text-center">
-                                    <div class="block orange">
-                                        <i class="fas fa-gift icon"></i>Regular Price
-                                    </div>
-                                    <div class="block">
-                                        $14.99
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="n6">
-                                <div class="text-grp cprice text-center">
-                                    <div class="block green">
-                                        <i class="fas fa-gift"></i>Combo Price
-                                    </div>
-                                    <div class="block">
-                                        $14.24
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex btn-wraps">
-                            <a href="#" class="btn-order-now" title="Order now"><i class="fas fa-cart-plus"></i>Order
-                                now</a>
-                            <a href="#" class="add-to-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-                <?php } ?>
-
-            </div>
-
-        </section>
-    </section>
+      <?php include('sections/related-products.php') ?>
 
 </main>
 

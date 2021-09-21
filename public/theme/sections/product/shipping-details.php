@@ -12,7 +12,7 @@
     <span class="font-dark font-12 client-address">Kupondole Bagmati Ward 1 - Kupondole Area, lalitpur Inside Ring Road, bagmati Province</span>
 
     <div class="extra-message m-l-2">
-      <span class="green font-12">Free delivery on collecting your order (Pre-Payment Only) from Pick-Up point.</span>
+      <span class="green msg">Free delivery on collecting your order (Pre-Payment Only) from Pick-Up point.</span>
       <div class="subinfo flex font-12">
         <small class="font-light">6 suggested collection point(s) nearby</small>
         <a href="" class="greyicon">

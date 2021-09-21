@@ -1,21 +1,20 @@
 <section class="slider-wrapper relative">
-
   <img src="{{ asset('theme/images/banner1.jpg') }}" alt="banner 1" class="bannerimg img-responsive">
-
   <div class="banner absolute">
     <div class="flex">
       <div class="n8 text-left">
         <div class="icon-wrapper">
-          <!-- <img src="images/site-icon.png" class="img-responsive" alt="maxine Blooms" title="Maxine Blooms"> -->
-          <h1>Maxine Blooms</h1>
+          <img src="{{ asset('theme/images/logo.png') }}" class="img-responsive" alt="maxine Blooms"
+            title="Maxine Blooms" width="80%">
+          <!-- <h1>Maxine Blooms</h1> -->
         </div>
       </div>
       <div class="n4 text-right relative">
         <div class="icons-wrapper flex justify-end">
           <div class="links">
-            <a href="#" class="relative">
+            <a href="{{ url('cart') }}" class="relative">
               <i class="fas fa-shopping-cart icon"></i>
-              <span class="absolute badge">3</span>
+              <span class="absolute badge">2</span>
             </a>
             <a href="#" class="toggleCard">
               <i class="fas fa-bars"></i>
@@ -33,8 +32,7 @@
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.</p>
+            </p>
           </div>
           <div class="card-footer">
 
@@ -98,62 +96,37 @@
 
       </div>
     </div>
+    <?php $categories = ['Fresh flowers', 'preserved flowers', 'personalized gifts', 'decor', 'greens', 'occassions', 'accessories']; ?>
+    <?php $icons = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png']; ?>
     <div class="flex">
 
       <div class="n8 text-left">
 
-        <ul class="icon-list">
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="{{ asset('theme/images/flower.png') }}" alt="" class="icon">
-              <span>Fresh Flowers</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="{{ asset('theme/images/preserved.png') }}" alt="" class="icon">
-              <span>preserved flowers</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="{{ asset('theme/images/gift.png') }}" alt="" class="icon">
-              <span>personalized gifts</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="{{ asset('theme/images/decor.png') }}" alt="" class="icon">
-              <span>decor</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="{{ asset('theme/images/greens.png') }}" alt="" class="icon">
-              <span>greens</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="{{ asset('theme/images/occasion.png') }}" alt="" class="icon">
-              <span>occassions</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="" class="icon-label">
-              <img src="{{ asset('theme/images/accessory.png') }}" alt="" class="icon">
-              <span>accessories</span>
-            </a>
-          </li>
-
-        </ul>
+        <table class="category-list" id="categories_list">
+          <?php $i=0; foreach( $categories as $cat ): ?>
+          <?php $left = strlen($cat) < 11 ? strlen($cat) + (37 + 0.5) : ( strlen($cat) < 13 ? strlen($cat) + (37 + 1) : strlen($cat) + (39 + 5) ) ; ?>
+          <tr>
+            <td class="category-item" id="cat-main-<?=$i?>" subcatid="<?=$i?>">
+              <div class="link-wrapper relative">
+                <a href="" class="icon-label">
+                  <div class="icon"><img src="{{ asset('theme/images/bannericons/' . $icons[$i]) }}" alt="" width="32px"
+                      height="32px">
+                  </div>
+                  <span class="catTitle"><?= $cat ?></span>
+                </a>
+                <ul id="subcats-<?=$i?>" class="subcats absolute <?=$i == 0 ? 'first' : ''?>" style="left: <?=$left?>%">
+                  <li><a href="">Fruit Hamper/basket</a></li>
+                  <li class="text-center"><a href="">hand bouquet</a></li>
+                  <li><a href="">table arrangements</a></li>
+                  <li><a href="">venue decors</a></li>
+                  <span></span>
+                  <div class="close close-subcats"><i class="far fa-times-circle"></i></div>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <?php $i++; endforeach; ?>
+        </table>
 
       </div>
 

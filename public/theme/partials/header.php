@@ -8,10 +8,10 @@
 
   <link rel="icon" href="/logosmall.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href="css/style.css?ver=3.2">
-  <link rel="stylesheet" href="css/media.css?ver=3.2">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css?ver=4.1">
+  <link rel="stylesheet" href="css/media.css?ver=4.1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">

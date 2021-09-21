@@ -14,3 +14,6 @@
 Auth::routes();
 
 Route::get('/', 'FrontController@index');
+
+Route::get('/cart', 'FrontController@cart');
+Route::get('/checkout', 'FrontController@checkout');

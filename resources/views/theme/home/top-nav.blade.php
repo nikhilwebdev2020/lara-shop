@@ -8,7 +8,7 @@
         <option value="SGD">SGD</option>
       </select>
 
-      <a href="#" class="icon-label">
+      <a href="{{ url('cart') }}" class="icon-label">
         <i class="fas fa-shopping-cart icon"></i>
         <label>Shopping Cart</label>
       </a>
@@ -33,7 +33,7 @@
           <label>Support</label>
         </a>
 
-        <a href="#" class="icon-label">
+        <a href="login.php" class="icon-label" id="loginBtn">
           <i class="fas fa-user-plus icon"></i>
           <label>Login In / Register</label>
         </a>
