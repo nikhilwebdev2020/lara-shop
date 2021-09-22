@@ -27,5 +27,6 @@ function(){
     Route::get('/', 'AdminController@index')->name('dashboard');
     Route::resource('/products', 'ProductController');
 	Route::resource('/categories', 'CategoryController'); 
+    Route::resource('sitesettings', 'SettingsController');
     Route::resource('/users', 'UserController'); 
 });
