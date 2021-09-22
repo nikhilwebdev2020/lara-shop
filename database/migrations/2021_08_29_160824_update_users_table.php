@@ -14,7 +14,8 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function(Blueprint $table){
-            $table->tinyInteger('suspend')->default(0)->after('password');
+            $table->string('api_token', 60)->unique()->nullable()->after('password');
+            $table->boolean('suspend')->default(0)->after('api_token');
         });
     }
 

@@ -122,6 +122,43 @@
 <script src="{{ asset('theme/owlcarousel/dist/owl.carousel.min.js') }}"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="{{ asset('theme/js/main.js?ver=3.2') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+@if ( Session::has('info') )
+
+<script>
+    Swal.fire({
+			text: "{{ Session::get('info') }}",
+			icon: 'info',
+			confirmButtonText: 'Ok'
+		})
+</script>
+
+@endif
+
+@if ( Session::has('success') )
+
+<script>
+    Swal.fire({
+			text: "{{ Session::get('success') }}",
+			icon: 'success',
+			confirmButtonText: 'Ok'
+		})
+</script>
+
+@endif
+
+@if ( Session::has('error') )
+
+<script>
+    Swal.fire({
+			text: "{{ Session::get('error') }}",
+			icon: 'error',
+			confirmButtonText: 'Ok'
+		})
+</script>
+
+@endif
 
 </body>
 

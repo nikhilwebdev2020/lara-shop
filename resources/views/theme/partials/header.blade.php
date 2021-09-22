@@ -33,25 +33,35 @@
                 <h4 class="font-dark">Welcome! Please Login to continue.</h4>
                 <span class="caption font-12 green">New member? <a href="" class="green">Register</a> here.</span>
 
+                @include('errors.errors')
+
                 <div class="form-block">
 
-                    <form action="" method="post">
+                    <form action="{{ route('login') }}" method="post">
+                        {{ csrf_field() }}
                         <div class="flex">
                             <div class="n6 left">
 
                                 <div class="form-wrap flex">
 
-                                    <label class="font-12">Phone Number or Email*</label>
-                                    <input type="text" name="phone_or_email" class="font-12 font-light"
-                                        placeholder="Please enter your Phone Number or Email">
+                                    <label class="font-12">Email*</label>
+                                    <input type="text" name="email"
+                                        class="font-12 font-light {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                        placeholder="Please enter your Email" value="{{ old('email') }}">
 
                                     <label class="font-12">Password*</label>
-                                    <input type="password" name="password" class="font-12 font-light"
+                                    <input type="password" name="password"
+                                        class="font-12 font-light {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                         placeholder="Please enter your password.">
 
                                 </div>
 
-                                <div class="text-right">
+                                <div class="flex justify-space-between">
+                                    <span class="font-12 font-light">
+                                        <input type="checkbox" class="checkbox-login" name="remember"
+                                            {{ old('remember') ? 'checked' : '' }}>
+                                        {{ __('Keep me signed in') }}
+                                    </span>
                                     <a href="#" class="font-12 green">Forgot Password?</a>
                                 </div>
 

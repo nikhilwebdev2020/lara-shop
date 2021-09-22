@@ -385,6 +385,10 @@ ul {
   justify-content: center;
 }
 
+.justify-space-between {
+  justify-content: space-between;
+}
+
 .icons-wrapper {
   padding-right: 2em;
   margin-top: -50px;
@@ -1377,6 +1381,7 @@ ul {
   text-transform: uppercase;
   padding: 10px 15px;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .button .fas {
@@ -2037,4 +2042,27 @@ td.va-top {
 }
 
 .categories-list ul li ul {
+}
+
+.dropdown-sublist {
+  position: absolute;
+  right: 0;
+  background-color: #f3f3f3;
+  z-index: 1;
+  top: 2rem;
+  font-size: 12px;
+  color: grey;
+  text-align: center;
+}
+
+.dropdown-sublist li a {
+  color: grey;
+}
+
+.dropdown-sublist li {
+  padding: 10px 10px;
+}
+
+.dropdown-sublist li:hover {
+  background-color: snow;
 }

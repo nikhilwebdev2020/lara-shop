@@ -92,16 +92,18 @@ var btns = document.getElementsByClassName("add-to-cart");
 var spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
-btn.onclick = function (event) {
-  event.preventDefault();
-  modal.style.display = "block";
-};
+if (btn) {
+  btn.onclick = function (event) {
+    event.preventDefault();
+    modal.style.display = "block";
+  };
+}
 
 for (i = 0; i < btns.length; i++) {
-  btns[i].onclick = function(event) {
+  btns[i].onclick = function (event) {
     event.preventDefault();
     dynamicModal.style.display = "block";
-  }
+  };
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -126,62 +128,76 @@ window.onclick = function (event) {
 function changeQuantity(type, target) {
   const inp = document.getElementById(target);
   let val = inp.value;
-  if ( type == 'plus' ) {
-    inp.value = '';
+  if (type == "plus") {
+    inp.value = "";
     inp.value = parseInt(val) + 1;
-  }else{
-    inp.value = '';
+  } else {
+    inp.value = "";
     inp.value = parseInt(val) > 1 ? parseInt(val) - 1 : 1;
   }
 }
 
-let change_qty = document.getElementsByClassName('change_qty');
+let change_qty = document.getElementsByClassName("change_qty");
 for (var i = 0; i < change_qty.length; i++) {
-  change_qty[i].addEventListener('click', function(event){
+  change_qty[i].addEventListener("click", function (event) {
     event.preventDefault();
-    const type = this.getAttribute('type');
-    const target = this.getAttribute('data-target');
+    const type = this.getAttribute("type");
+    const target = this.getAttribute("data-target");
     window.onload = changeQuantity(type, target);
   });
 }
 
 function clearActive(element) {
-    for (i = 0; i < element.length; i++) {
-        element[i].classList.remove('active');
-    }
+  for (i = 0; i < element.length; i++) {
+    element[i].classList.remove("active");
+  }
 }
 
-const categoryitems = document.getElementsByClassName('category-item');
-const subcategories = document.getElementsByClassName('subcats');
+const categoryitems = document.getElementsByClassName("category-item");
+const subcategories = document.getElementsByClassName("subcats");
 const categories_list = document.getElementById("categories_list");
 const catTitles = document.getElementsByClassName("catTitle");
 const closesubcats = document.getElementsByClassName("close-subcats");
 
 for (i = 0; i < categoryitems.length; i++) {
-  categoryitems[i].addEventListener("mouseenter", function(event){
+  categoryitems[i].addEventListener("mouseenter", function (event) {
     event.preventDefault();
-    const subcatid = this.getAttribute('subcatid');
+    const subcatid = this.getAttribute("subcatid");
     clearActive(subcategories);
-    const elem = document.getElementById("subcats-"+subcatid);
-    elem.classList.add('active');
-  })
+    const elem = document.getElementById("subcats-" + subcatid);
+    elem.classList.add("active");
+  });
 }
 
 for (i = 0; i < categoryitems.length; i++) {
-  categoryitems[i].addEventListener("click", function(event){
+  categoryitems[i].addEventListener("click", function (event) {
     event.preventDefault();
-  })
+  });
 }
 
 for (i = 0; i < closesubcats.length; i++) {
-  closesubcats[i].addEventListener("click", function(event){
+  closesubcats[i].addEventListener("click", function (event) {
     clearActive(subcategories);
   });
 }
 
 // When the user clicks anywhere outside of the list, close it
 window.onclick = function (event) {
-  if ( event.target.classList.contains("catTitle") == false && event.target.closest("#categories_list") == null ) {
+  if (
+    event.target.classList.contains("catTitle") == false &&
+    event.target.closest("#categories_list") == null
+  ) {
     clearActive(subcategories);
   }
 };
+
+// Dropdown 1 on hover
+const dropdown1 = document.getElementById("dropdown1");
+dropdown1.addEventListener("mouseenter", function () {
+  const target = this.getAttribute("target");
+  const tar = document.getElementById(target);
+  tar.classList.toggle("hide");
+  tar.addEventListener("mouseleave", function () {
+    tar.classList.add("hide");
+  });
+});

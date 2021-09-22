@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -25,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -35,5 +37,30 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login() {
+        
+        if ( $this->attemptLogin(request()) ) {
+            $user = $this->guard()->user();
+            if( Auth::attempt(['email' => request()->email, 'password' => request()->password]) ) {
+
+                if ( $user->hasRoles(['Admin', 'Supplier']) ) {
+
+                    request()->session()->flash('success', 'You are now logged in.');
+                    return redirect()->intended('admin');
+    
+                }else{
+                    request()->session()->flash('success', 'You are now logged in.');
+                    return redirect()->intended('/');
+                } 
+                
+            }
+            
+        }else{
+            
+            request()->session()->flash('error', 'Wrong credentials.');
+            return redirect()->back()->withInput();
+        }
     }
 }
