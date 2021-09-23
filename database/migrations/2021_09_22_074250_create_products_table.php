@@ -42,6 +42,7 @@ class CreateProductsTable extends Migration
             $table->string('productTags')->nullable();
             
             $table->text('keywords')->nullable();
+            $table->string('brand_id')->nullable();
             
             $table->timestamps();
         });

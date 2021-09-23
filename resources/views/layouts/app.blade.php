@@ -22,6 +22,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 
     <style>
         .form-group {
@@ -92,12 +93,17 @@
     </script>
     <script async type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
               height: 350,
             });
+        });
+
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
         });
 
         const toggleMenu = document.getElementById('toggleMenu');

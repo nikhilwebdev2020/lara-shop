@@ -31,6 +31,43 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
+
+    public function profile(){
+        return $this->hasOne('App\Profile');
+    }
+
+    public function supplier(){
+        return $this->hasOne('App\Supplier');
+    }
+
+    public function photos(){
+        return $this->hasMany('App\Photos');
+    }
+
+    public function reviews(){
+        return $this->hasMany('App\Reviews', 'userId');
+    }
+
+    public function orders(){
+        return $this->hasMany('App\Orders');
+    }
+
+    public function wishlists(){
+        return $this->hasMany('App\Wishlist', 'userId');
+    }
+
+    public function coupons() {
+        return $this->belongsToMany('App\Coupon');
+    }
+
+    public function checkUserCouponStatus($couponCode) {
+        $check = $this->coupons;
+        dd($check);
+    }
+
     public function hasRoles($roles) {
         
         if ( is_array($roles) ) {

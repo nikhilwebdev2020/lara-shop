@@ -30,4 +30,6 @@ function(){
     Route::resource('sitesettings', 'SettingsController');
     Route::resource('/users', 'UserController'); 
     Route::resource('icons', 'IconController');
+    Route::resource('tags', 'TagsController');
+    Route::get('product/removeImage/{id}', 'ProductController@remove_image')->name('remove.image');
 });
