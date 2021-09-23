@@ -8,7 +8,11 @@ class Category extends Model
 {
     public function products() {
         return $this->hasMany('App\Product', 'categoryId');
-      }
+    }
+
+    public function icon() {
+        return $this->belongsTo('App\Icon', 'iconID');
+    }
   
       public function parent() {
           if ( $category = Category::find($this->parentId) ) {

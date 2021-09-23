@@ -29,4 +29,5 @@ function(){
 	Route::resource('/categories', 'CategoryController'); 
     Route::resource('sitesettings', 'SettingsController');
     Route::resource('/users', 'UserController'); 
+    Route::resource('icons', 'IconController');
 });

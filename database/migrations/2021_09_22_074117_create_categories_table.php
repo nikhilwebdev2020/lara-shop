@@ -23,6 +23,7 @@ class CreateCategoriesTable extends Migration
             $table->boolean('featured')->default(0);
             $table->boolean('offered')->default(0);
             $table->string('banner')->nullable();
+            $table->tinyInteger('menuOrder')->default(0);
             
             $table->timestamps();
         });
